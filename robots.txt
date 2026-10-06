@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elmerwu726.github.io/mysticfeather9/sitemap.xml
+Sitemap: https://mysticfeather9.github.io/sitemap.xml
