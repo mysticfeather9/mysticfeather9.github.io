@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玄境拾光｜風水命理顧問</title>
+<meta name="description" content="玄境拾光｜陽宅風水・紫微斗數・奇門遁甲・姓名學。服務項目、預約方式、免費排盤工具，一頁看完。">
+<meta name="theme-color" content="#1A2D20">
+<meta property="og:title" content="玄境拾光｜風水命理顧問">
+<meta property="og:description" content="陽宅風水・紫微斗數・奇門遁甲・姓名學。買房、創業、換工作前，先來問一聲。">
+<meta property="og:image" content="images/icon-512.png">
+<link rel="icon" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1A2D20;
+    --bg-2: #243D2C;
+    --card: rgba(255,255,255,0.05);
+    --card-line: rgba(196,151,90,0.28);
+    --gold: #C4975A;
+    --gold-soft: #E8D5B0;
+    --text: #F3F1EA;
+    --text-2: rgba(243,241,234,0.78);
+    --btn-text: #1A2D20;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: radial-gradient(120% 60% at 50% 0%, var(--bg-2) 0%, var(--bg) 60%) fixed, var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", -apple-system, "PingFang TC", sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 40px 16px 32px; }
+
+  header { text-align: center; }
+  .avatar {
+    width: 116px; height: 116px; border-radius: 50%;
+    background: var(--bg-2);
+    display: grid; place-items: center; margin: 0 auto 16px; overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: contain; }
+  h1 { font-family: "Noto Serif TC", serif; font-weight: 600; font-size: 22px; letter-spacing: .06em; }
+  h1 small { display: block; font-size: 14px; color: var(--gold-soft); font-weight: 500; letter-spacing: .12em; margin-top: 2px; }
+  .bio { margin-top: 14px; font-size: 14px; color: var(--text-2); }
+  .bio .topics { color: var(--gold-soft); margin: 6px 0; }
+
+  .socials { display: flex; justify-content: center; gap: 14px; margin-top: 18px; }
+  .socials a {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--card-line); display: grid; place-items: center;
+    color: var(--gold-soft); transition: background .2s;
+  }
+  .socials a:hover { background: var(--card); }
+  .socials svg { width: 22px; height: 22px; }
+
+  .cta {
+    display: block; text-align: center; text-decoration: none;
+    margin-top: 24px; padding: 14px 16px; border-radius: 999px;
+    background: linear-gradient(135deg, #D8B27A, var(--gold));
+    color: var(--btn-text); font-weight: 500; font-size: 16px; letter-spacing: .08em;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  }
+  .cta small { display: block; font-size: 12px; letter-spacing: .02em; opacity: .8; font-weight: 400; }
+
+  section { margin-top: 34px; }
+  h2 {
+    font-family: "Noto Serif TC", serif; font-weight: 500; font-size: 16px;
+    color: var(--gold); letter-spacing: .14em; text-align: center; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2::before, h2::after { content: ""; flex: 1; height: 1px; background: var(--card-line); }
+
+  .card, details {
+    background: var(--card); border: 1px solid var(--card-line); border-radius: 14px;
+    margin-bottom: 10px;
+  }
+  details summary {
+    list-style: none; cursor: pointer; padding: 14px 16px;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  .s-name { font-size: 15px; font-weight: 500; }
+  .s-price { font-size: 13px; color: var(--gold-soft); white-space: nowrap; }
+  .s-price::after { content: " ▾"; color: var(--gold); transition: transform .2s; display: inline-block; }
+  details[open] .s-price::after { transform: rotate(180deg); }
+  .s-body { padding: 0 16px 14px; font-size: 13.5px; color: var(--text-2); }
+  .s-body ul { margin: 8px 0 0 1.1em; }
+  .s-body .note { margin-top: 8px; font-size: 12.5px; color: var(--gold-soft); }
+
+  a.card { display: block; text-decoration: none; padding: 14px 16px; }
+  a.card:hover { background: rgba(255,255,255,0.08); }
+  .c-title { font-size: 15px; font-weight: 500; display: flex; justify-content: space-between; gap: 10px; }
+  .c-title::after { content: "→"; color: var(--gold); }
+  .c-desc { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+  .tag { display: inline-block; font-size: 11.5px; color: var(--btn-text); background: var(--gold-soft); border-radius: 999px; padding: 1px 8px; margin-bottom: 6px; }
+
+  footer { text-align: center; font-size: 12px; color: rgba(243,241,234,0.55); margin-top: 36px; }
+
+  /* ---- 動畫 ---- */
+  .wrap { position: relative; z-index: 1; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .avatar, h1, .bio, .socials, .cta, footer { animation: rise .7s cubic-bezier(.2,.7,.3,1) both; }
+  h1 { animation-delay: .12s; }
+  .bio { animation-delay: .22s; }
+  .socials { animation-delay: .32s; }
+  .cta { animation-delay: .42s; }
+  footer { animation-delay: .6s; }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 22px 2px rgba(232,213,176,.18); }
+    50% { box-shadow: 0 0 46px 10px rgba(232,213,176,.38); }
+  }
+  .avatar { animation: rise .7s cubic-bezier(.2,.7,.3,1) both, glow 4.5s ease-in-out .8s infinite; }
+
+  .cta { position: relative; overflow: hidden; }
+  .cta::after {
+    content: ""; position: absolute; top: 0; left: 0; width: 45%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: translateX(-120%) skewX(-18deg);
+    animation: shine 4.2s ease-in-out 1.4s infinite;
+    pointer-events: none;
+  }
+  @keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg); } 35%, 100% { transform: translateX(330%) skewX(-18deg); } }
+
+  .dust { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .dust i {
+    position: absolute; bottom: -10px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,215,160,.95), rgba(196,151,90,0) 70%);
+    animation: drift linear infinite; opacity: 0;
+  }
+  @keyframes drift {
+    0% { transform: translate(0, 0); opacity: 0; }
+    12% { opacity: var(--o, .6); }
+    85% { opacity: var(--o, .6); }
+    100% { transform: translate(var(--dx, 20px), -105vh); opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+    .dust { display: none; }
+  }
+
+  /* ---- 第二批：八卦羅盤、捲動浮現、金線延伸、展開與觸碰 ---- */
+  .avatar-wrap { position: relative; width: 300px; height: 300px; max-width: 100%; margin: 0 auto 8px; display: grid; place-items: center; }
+  .avatar-wrap .avatar { margin: 0; position: relative; z-index: 1; }
+  .luopan { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .8; pointer-events: none; animation: rise 1s cubic-bezier(.2,.7,.3,1) both; }
+  @keyframes luopan-spin-cw { to { transform: rotate(360deg); } }
+  @keyframes luopan-spin-ccw { to { transform: rotate(-360deg); } }
+  .luopan-outer-ring { transform-origin: 250px 250px; animation: luopan-spin-cw 120s linear infinite; }
+  .luopan-inner-ring { transform-origin: 250px 250px; animation: luopan-spin-ccw 80s linear infinite; }
+
+  .sr { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+  .sr.in { opacity: 1; transform: none; }
+
+  h2::before, h2::after { transform: scaleX(0); transition: transform .9s cubic-bezier(.2,.7,.3,1) .15s; }
+  h2::before { transform-origin: right center; }
+  h2::after { transform-origin: left center; }
+  h2.in::before, h2.in::after, .no-js h2::before, .no-js h2::after { transform: scaleX(1); }
+
+  .socials a, a.card, details { transition: transform .2s ease, box-shadow .25s ease, background .2s, border-color .25s; }
+  .socials a:hover, .socials a:active { transform: translateY(-3px); box-shadow: 0 0 14px rgba(232,213,176,.35); border-color: var(--gold); }
+  a.card:hover, a.card:active, details:hover { border-color: rgba(196,151,90,.6); box-shadow: 0 0 18px rgba(196,151,90,.18); }
+  a.card:active, details summary:active { transform: scale(.985); }
+  details .s-body { overflow: hidden; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sr { opacity: 1; transform: none; }
+    h2::before, h2::after { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="dust" aria-hidden="true"></div>
+<div class="wrap">
+
+  <header>
+    <div class="avatar-wrap"><svg id="luopan-svg" class="luopan" viewBox="0 0 500 500" aria-hidden="true"></svg><div class="avatar"><img src="images/icon-512.png" alt="玄境拾光 logo"></div></div>
+    <h1>玄境拾光<small>風水命理顧問</small></h1>
+    <div class="bio">
+      <p>師承巃羽堂陳巃羽老師<br>白天是科技業研發主管，下班看風水排命盤</p>
+      <p class="topics">陽宅風水・紫微斗數・奇門遁甲・姓名學</p>
+      <p>買房、創業、換工作前，先來問一聲</p>
+    </div>
+    <nav class="socials" aria-label="社群連結">
+      <a href="https://www.instagram.com/mysticfeather9" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.threads.com/@mysticfeather9" target="_blank" rel="noopener" aria-label="Threads">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16.8 11.2c-.4-3-2.3-4.4-4.9-4.4-3.2 0-5.2 2.4-5.2 5.4 0 3.2 2.1 5.6 5.4 5.6 2.6 0 4.6-1.5 4.6-3.6 0-1.9-1.6-3-3.9-3-1.9 0-3.1.9-3.1 2.1 0 1.1 1 1.8 2.2 1.8 2 0 3.1-1.6 3.1-4.4"/><path d="M19.5 7.5C18 4.6 15.4 3 12 3 6.8 3 3.5 6.8 3.5 12s3.3 9 8.5 9c3.9 0 6.8-2.1 7.7-5.6"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61574833595617" target="_blank" rel="noopener" aria-label="Facebook 粉絲專頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M13.2 21v-7.6h2.4l.4-2.8h-2.8V8.9c0-.8.3-1.4 1.4-1.4H16V5.1c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H8.3v2.8h2.3V21"/></svg>
+      </a>
+      <a href="https://lin.ee/PxBJdUN" target="_blank" rel="noopener" aria-label="LINE 官方帳號">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 3.5 3.1 6.5 7.4 7.1.5.1.6.4.5.9l-.2 1.6c0 .4.3.6.7.4 2.9-1.6 7.2-4.6 8.8-7.2.5-.9.8-1.8.8-2.8 0-4-4-7.2-9-7.2Z"/><path d="M7.5 9.2v3.4h1.8M11 9.2v3.4M13 12.6V9.2l2.3 3.4V9.2M17.4 9.2h-1.4v3.4h1.4M16 10.9h1.3" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </a>
+    </nav>
+    <a class="cta" href="https://lin.ee/PxBJdUN" target="_blank" rel="noopener">
+      加 LINE 預約諮詢
+      <small>留下想問的事情與方便的時間，我會回覆你</small>
+    </a>
+  </header>
+
+  <section>
+    <h2>服務項目</h2>
+
+    <details>
+      <summary><span class="s-name">遠距陽宅風水吉凶鑑定</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        全程遠端進行，無需現場勘查。購屋前評估陽宅格局吉凶，附電子鑑定報告，全球皆可預約。
+        <ul>
+          <li>所需資料：建物地址、等比例平面圖、家庭基本資料</li>
+        </ul>
+        <p class="note">鑑定後委託規劃設計，可享鑑定費 50% 折抵</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="s-name">遠距陽宅風水規劃設計｜住宅</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        三元納氣多派融合分析，為你規劃全宅旺氣格局，無需拆門改窗。
+        <ul>
+          <li>財位、文昌位、桃花位、煞氣點逐一標示</li>
+          <li>預售屋、新宅裝修前、中古屋調整皆適用</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="s-name">遠距陽宅風水規劃設計｜公司工廠</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        針對辦公室、店面、廠房進行三元納氣多派融合分析，座位、門窗、動線方位精準至公分。
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="s-name">實地陽宅風水規劃設計</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        親自到場勘察，內外局一起規劃，室內布局依家庭成員八字命格量身安排，並提供永久免費諮詢。
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="s-name">新生兒命名｜成人改名</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        三才八格、生肖五行解析，搭配紫微命盤交叉確認。
+        <ul>
+          <li>新生兒命名：嬰兒姓名、性別、生辰、喜忌用字</li>
+          <li>成人改名：本人姓名、性別、生辰</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="s-name">紫微斗數｜線上諮詢</span><span class="s-price"></span></summary>
+      <div class="s-body">
+        先校正出生時辰，再從格局與單星看整張命盤，推演三個大限、三個流年的吉凶。以 LINE 視訊或語音進行。
+        <ul>
+          <li>準備資料：姓名、性別、婚姻狀況、出生時間（幾點幾分）、出生地、想詢問的問題</li>
+        </ul>
+      </div>
+    </details>
+    <p class="c-desc" style="text-align:center;margin-top:6px">費用與細節，歡迎 LINE 私訊詢問</p>
+  </section>
+
+  <section>
+    <h2>公益活動</h2>
+    <div class="card" style="padding:14px 16px">
+      <span class="tag">每年 12 月開放</span>
+      <div class="s-name">紫白飛星九宮流年建議</div>
+      <div class="c-desc">每年小寒前約一個月，限時開放隨喜捐款換一份住家流年建議。追蹤 IG 或加 LINE，開放時就會看到消息。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>更多內容</h2>
+    <a class="card" href="https://mysticfeather9.github.io/" target="_blank" rel="noopener">
+      <div class="c-title">官方網站</div>
+      <div class="c-desc">服務流程、常見問題與完整說明</div>
+    </a>
+    <a class="card" href="https://www.instagram.com/mysticfeather9" target="_blank" rel="noopener">
+      <div class="c-title">IG 風水命理筆記</div>
+      <div class="c-desc">形煞、紫微、遠距堪宅實錄</div>
+    </a>
+    <a class="card" href="https://www.threads.com/@mysticfeather9" target="_blank" rel="noopener">
+      <div class="c-title">Threads</div>
+      <div class="c-desc">比較短的風水命理隨筆</div>
+    </a>
+    <a class="card" href="https://www.facebook.com/profile.php?id=61574833595617" target="_blank" rel="noopener">
+      <div class="c-title">Facebook 粉絲專頁</div>
+      <div class="c-desc">服務介紹與最新消息</div>
+    </a>
+  </section>
+
+  <footer>© 2026 玄境拾光 Mystic Feather</footer>
+</div>
+<script>
+  (function () {
+    var box = document.querySelector('.dust');
+    if (!box || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    for (var i = 0; i < 22; i++) {
+      var d = document.createElement('i'), size = 2 + Math.random() * 4;
+      d.style.width = d.style.height = size + 'px';
+      d.style.left = (Math.random() * 100) + '%';
+      d.style.animationDuration = (14 + Math.random() * 16) + 's';
+      d.style.animationDelay = (-Math.random() * 30) + 's';
+      d.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+      d.style.setProperty('--o', (0.3 + Math.random() * 0.5).toFixed(2));
+      box.appendChild(d);
+    }
+  })();
+</script>
+<script>
+  // 風水羅盤：與官網首頁同一段產生器（官方網站/mysticfeather9/index.html createLuopan）
+    function createLuopan() {
+        const svg = document.getElementById('luopan-svg');
+        const ns = 'http://www.w3.org/2000/svg';
+        const cx = 250, cy = 250;
+        const G = (a) => `rgba(196,151,90,${a})`;
+
+        function mkEl(tag, attrs) {
+            const e = document.createElementNS(ns, tag);
+            Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v));
+            return e;
+        }
+
+        function circ(parent, r, stroke, sw) {
+            parent.appendChild(mkEl('circle', { cx, cy, r, fill: 'none', stroke, 'stroke-width': sw || 0.8 }));
+        }
+
+        function txt(parent, x, y, content, size, opacity) {
+            const t = mkEl('text', {
+                x, y,
+                'text-anchor': 'middle',
+                'dominant-baseline': 'middle',
+                fill: G(opacity),
+                'font-size': size,
+                'font-family': 'serif'
+            });
+            t.textContent = content;
+            parent.appendChild(t);
+        }
+
+        // 外環（順時針慢轉）：24山刻度（幾何圖形）
+        const outerG = mkEl('g', { class: 'luopan-outer-ring' });
+        svg.appendChild(outerG);
+
+        circ(outerG, 245, G(0.8), 1.5);
+        circ(outerG, 218, G(0.4), 0.8);
+        circ(outerG, 192, G(0.6), 1);
+
+        // 24 tick marks
+        for (let i = 0; i < 24; i++) {
+            const angle = i * 15 * Math.PI / 180;
+            const major = i % 3 === 0;
+            outerG.appendChild(mkEl('line', {
+                x1: cx + (major ? 226 : 232) * Math.sin(angle),
+                y1: cy - (major ? 226 : 232) * Math.cos(angle),
+                x2: cx + 245 * Math.sin(angle),
+                y2: cy - 245 * Math.cos(angle),
+                stroke: G(major ? 0.9 : 0.5),
+                'stroke-width': major ? 1.8 : 0.8
+            }));
+        }
+
+        // 後天八卦文字（靜止覆蓋層，不隨外環轉動，避免字歪）
+        const outerTextG = mkEl('g', {});
+        svg.appendChild(outerTextG);
+
+        const bagua = [
+            { sym: '☵', name: '坎' }, { sym: '☶', name: '艮' },
+            { sym: '☳', name: '震' }, { sym: '☴', name: '巽' },
+            { sym: '☲', name: '離' }, { sym: '☷', name: '坤' },
+            { sym: '☱', name: '兌' }, { sym: '☰', name: '乾' }
+        ];
+        bagua.forEach((b, i) => {
+            const angle = i * 45 * Math.PI / 180;
+            const r = 205;
+            const x = cx + r * Math.sin(angle);
+            const y = cy - r * Math.cos(angle);
+            txt(outerTextG, x, y - 9, b.sym, 17, 0.95);
+            txt(outerTextG, x, y + 9, b.name, 11, 0.8);
+        });
+
+        // 中環（靜止）：五行
+        const midG = mkEl('g', {});
+        svg.appendChild(midG);
+
+        [162, 132, 102].forEach((r, i) => {
+            circ(midG, r, G([0.55, 0.4, 0.55][i]), 1);
+        });
+
+        for (let i = 0; i < 8; i++) {
+            const angle = i * 45 * Math.PI / 180;
+            midG.appendChild(mkEl('line', {
+                x1: cx + 102 * Math.sin(angle), y1: cy - 102 * Math.cos(angle),
+                x2: cx + 162 * Math.sin(angle), y2: cy - 162 * Math.cos(angle),
+                stroke: G(0.35), 'stroke-width': 0.8
+            }));
+        }
+
+        [
+            { name: '水', a: 0 }, { name: '木', a: 90 },
+            { name: '火', a: 180 }, { name: '金', a: 270 }
+        ].forEach(w => {
+            const a = w.a * Math.PI / 180;
+            txt(midG, cx + 120 * Math.sin(a), cy - 120 * Math.cos(a), w.name, 14, 0.7);
+        });
+        txt(midG, cx, cy + 2, '土', 14, 0.65);
+
+        // 內環（逆時針慢轉）
+        const innerG = mkEl('g', { class: 'luopan-inner-ring' });
+        svg.appendChild(innerG);
+
+        circ(innerG, 74, G(0.7), 1.5);
+        circ(innerG, 54, G(0.5), 1);
+
+        for (let i = 0; i < 8; i++) {
+            const angle = i * 45 * Math.PI / 180;
+            innerG.appendChild(mkEl('line', {
+                x1: cx + 54 * Math.sin(angle), y1: cy - 54 * Math.cos(angle),
+                x2: cx + 74 * Math.sin(angle), y2: cy - 74 * Math.cos(angle),
+                stroke: G(0.7), 'stroke-width': 1.2
+            }));
+        }
+
+        // 中心光暈
+        const defs = mkEl('defs', {});
+        const glow = mkEl('radialGradient', { id: 'luopanGlow', cx: '50%', cy: '50%', r: '50%' });
+        const s1 = mkEl('stop', { offset: '0%' }); s1.setAttribute('stop-color', 'rgba(212,170,100,0.55)');
+        const s2 = mkEl('stop', { offset: '40%' }); s2.setAttribute('stop-color', 'rgba(196,151,90,0.18)');
+        const s3 = mkEl('stop', { offset: '100%' }); s3.setAttribute('stop-color', 'rgba(196,151,90,0)');
+        glow.appendChild(s1); glow.appendChild(s2); glow.appendChild(s3);
+        defs.appendChild(glow);
+        svg.insertBefore(defs, svg.firstChild);
+
+        innerG.appendChild(mkEl('circle', { cx, cy, r: 48, fill: 'url(#luopanGlow)' }));
+        innerG.appendChild(mkEl('circle', { cx, cy, r: 9, fill: G(0.2), stroke: G(0.85), 'stroke-width': 1.5 }));
+        innerG.appendChild(mkEl('circle', { cx, cy, r: 3, fill: G(0.9) }));
+    }
+
+    createLuopan();
+
+  (function () {
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { document.documentElement.classList.add('no-js'); return; }
+    // 捲動到才浮現：每個區塊內的卡片依序錯開
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('section').forEach(function (sec) {
+      var h = sec.querySelector('h2'); if (h) io.observe(h);
+      sec.querySelectorAll('details, .card, section > p').forEach(function (el, i) {
+        el.classList.add('sr'); el.style.transitionDelay = (i * 70) + 'ms'; io.observe(el);
+      });
+    });
+    // 服務卡片展開／收合滑動
+    document.querySelectorAll('details').forEach(function (d) {
+      var sum = d.querySelector('summary'), body = d.querySelector('.s-body'), busy = false;
+      sum.addEventListener('click', function (ev) {
+        ev.preventDefault(); if (busy) return; busy = true;
+        if (d.open) {
+          var a = body.animate([{ height: body.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 260, easing: 'ease-in' });
+          a.onfinish = function () { d.open = false; busy = false; };
+        } else {
+          d.open = true;
+          var h = body.offsetHeight;
+          var b = body.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }], { duration: 320, easing: 'cubic-bezier(.2,.7,.3,1)' });
+          b.onfinish = function () { busy = false; };
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
