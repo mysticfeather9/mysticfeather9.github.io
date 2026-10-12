@@ -937,6 +937,164 @@
             animation: luopan-spin-ccw 80s linear infinite;
         }
 
+        /* ── 2026-10-13 重排：服務主打＋分組清單、流程／FAQ 左標題固定 ── */
+        .svc-feature {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+            gap: 48px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--gold);
+            padding: 44px 48px;
+            margin-bottom: 56px;
+        }
+        .svc-feature-name {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 26px;
+            color: var(--navy);
+            line-height: 1.45;
+            margin-bottom: 14px;
+        }
+        .svc-feature-desc { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px; }
+        .svc-benefits { list-style: none; padding: 0; margin: 0; }
+        .svc-benefits li {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+        .svc-benefits li::before {
+            content: '';
+            position: absolute;
+            left: 2px; top: 13px;
+            width: 7px; height: 7px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+        .svc-feature-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-left: 40px;
+            border-left: 1px solid var(--border);
+        }
+        .svc-feature-side .service-price { font-size: 30px; }
+        .svc-info p { font-size: 13px; color: var(--text-light); line-height: 1.7; margin-bottom: 6px; }
+        .svc-info p span { color: var(--navy); font-weight: 600; margin-right: 8px; }
+        .svc-feature-cta { align-self: flex-start; margin-top: auto; }
+
+        .svc-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 56px; align-items: start; }
+        .svc-group-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            color: var(--navy);
+            padding-bottom: 12px;
+            margin-bottom: 4px;
+            border-bottom: 2px solid var(--gold);
+        }
+        .svc-row { border-bottom: 1px solid var(--border); }
+        .svc-row summary {
+            list-style: none;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto 14px;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 2px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .svc-row summary::-webkit-details-marker { display: none; }
+        .svc-row summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .svc-row-name { font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5; }
+        .svc-row-price { font-family: 'Noto Serif TC', serif; font-size: 17px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+        .svc-row-chev {
+            width: 8px; height: 8px;
+            border-right: 1.5px solid var(--gold);
+            border-bottom: 1.5px solid var(--gold);
+            transform: rotate(45deg) translate(-2px, -2px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .svc-row[open] .svc-row-chev { transform: rotate(-135deg) translate(-2px, -2px); }
+        .svc-row summary:hover .svc-row-name { color: var(--gold); }
+        .svc-row-body { padding: 0 2px 22px; }
+        .svc-row-desc { font-size: 14px; color: var(--text-light); line-height: 1.85; margin-bottom: 10px; }
+        .svc-row-body .svc-benefits { margin-bottom: 14px; }
+        .svc-row-note { font-size: 12px; color: var(--text-light); margin-top: 8px; }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 64px;
+            align-items: start;
+        }
+        .split-head { position: sticky; top: 112px; }
+        .split-head .divider { margin-bottom: 0; }
+        .split-head .section-title { text-wrap: balance; word-break: keep-all; }
+
+        #process .process-steps {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        #process .process-steps::before {
+            display: block;
+            top: 28px; bottom: 28px;
+            left: 27px; right: auto;
+            width: 1px; height: auto;
+            background: linear-gradient(180deg, rgba(196,151,90,0.6), rgba(196,151,90,0.15));
+        }
+        #process .process-step {
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr);
+            column-gap: 28px;
+            text-align: left;
+            padding: 0 0 40px;
+        }
+        #process .process-step:last-child { padding-bottom: 0; }
+        #process .step-num { grid-row: 1 / span 3; margin: 0; }
+        #process .step-title { font-size: 19px; margin: 12px 0 8px; }
+        #process .step-desc { font-size: 14px; max-width: 46ch; }
+        #process .step-cta { justify-self: start; }
+
+        #faq .faq-list { max-width: none; margin: 0; }
+        #faq .faq-item { border-bottom: 0; border-left: 2px solid transparent; transition: border-color 0.3s, background 0.3s; }
+        #faq .faq-item + .faq-item { margin-top: 4px; }
+        #faq .faq-question { padding: 20px 20px; font-size: 16px; }
+        #faq .faq-answer { padding: 0 20px; }
+        #faq .faq-item.open { border-left-color: var(--gold); background: var(--white); }
+        #faq .faq-item.open .faq-answer { padding-bottom: 22px; max-height: 320px; }
+        #faq .faq-question:hover { color: var(--gold); }
+
+        .svc-groups .svc-group.fade-in:nth-child(2) { transition-delay: 0.08s; }
+        #process .process-step.fade-in:nth-child(2) { transition-delay: 0.06s; }
+        #process .process-step.fade-in:nth-child(3) { transition-delay: 0.12s; }
+        #process .process-step.fade-in:nth-child(4) { transition-delay: 0.18s; }
+
+        @media (max-width: 960px) {
+            .svc-feature { grid-template-columns: 1fr; gap: 28px; padding: 32px 28px; }
+            .svc-feature-side { padding-left: 0; padding-top: 24px; border-left: 0; border-top: 1px solid var(--border); }
+            .split { grid-template-columns: 1fr; gap: 36px; }
+            .split-head { position: static; }
+        }
+        @media (max-width: 768px) {
+            .svc-groups { grid-template-columns: 1fr; }
+            .svc-feature-name { font-size: 22px; }
+            .svc-feature-cta { align-self: stretch; text-align: center; }
+            #process .process-step { grid-template-columns: 48px minmax(0, 1fr); column-gap: 18px; }
+            #process .step-num { width: 48px; height: 48px; font-size: 16px; }
+            #process .process-steps::before { left: 23px; }
+            #faq .faq-question { padding: 18px 14px; font-size: 15px; }
+            #faq .faq-answer { padding: 0 14px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in { opacity: 1; transform: none; transition: none; }
+            .luopan-outer-ring, .luopan-inner-ring, #luopanGlow { animation: none; }
+            .svc-row-chev, #faq .faq-item, .faq-answer { transition: none; }
+        }
+
         /* ── Mobile ── */
         @media (max-width: 960px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -987,12 +1145,6 @@
 
             .services-header { flex-direction: column; align-items: flex-start; }
 
-            .process-steps {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-
-            .process-steps::before { display: none; }
 
             footer { flex-direction: column; text-align: center; padding: 24px 20px; }
         }
@@ -1043,7 +1195,6 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-text fade-in">
-                <p class="section-label">關於我</p>
                 <h2 class="section-title">陽宅風水 × 命理，看見你的生命格局</h2>
                 <div class="divider"></div>
                 <p>投入風水命理研究超過十年，深入鑽研陽宅風水、紫微斗數、奇門遁甲與姓名學。</p>
@@ -1113,109 +1264,118 @@
             <div class="divider"></div>
             <p class="section-desc">遠距服務全球皆可預約・實地堪輿請透過 LINE 洽詢範圍</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon">⌂</div>
-                <h3 class="service-name">遠距陽宅風水吉凶鑑定</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">全程遠端進行，無需現場勘查。購屋前，專業評估陽宅格局吉凶，分析三元納氣布局可行性，附電子鑑定報告，全球皆可預約。</p>
-                <ul class="service-benefits">
+        <article class="svc-feature fade-in">
+            <div class="svc-feature-main">
+                <h3 class="svc-feature-name">遠距陽宅風水吉凶鑑定</h3>
+                <p class="svc-feature-desc">全程遠端進行，無需現場勘查。購屋前，專業評估陽宅格局吉凶，分析三元納氣布局可行性，附電子鑑定報告，全球皆可預約。</p>
+                <ul class="svc-benefits">
                     <li>提早發現潛藏問題，避免購屋後才後悔</li>
                     <li>避開風水大凶的房子</li>
                     <li>找出真正適合你的吉宅</li>
                 </ul>
-                <div class="service-info">
+            </div>
+            <div class="svc-feature-side">
+                <p class="service-price">NT$ 5,000 <span>二樓起每層加 NT$ 2,500</span></p>
+                <div class="svc-info">
                     <p><span>所需資料</span>建物地址、等比例平面圖、家庭基本資料</p>
                     <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
                     <p><span>優惠</span>鑑定後委託規劃設計，可享鑑定費 50% 折抵</p>
                 </div>
-                <p class="service-price">NT$ 5,000 <span>二樓起每層加 NT$ 2,500</span></p>
+                <a href="#contact" class="btn-primary svc-feature-cta">立即預約</a>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">☷</div>
-                <h3 class="service-name">遠距陽宅風水規劃設計｜住宅</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">不受地點限制，三元納氣多派融合分析，為你規劃全宅旺氣格局。</p>
-                <ul class="service-benefits">
-                    <li>多派融合：三元納氣、紫白飛星、乾坤國寶、東西四命</li>
-                    <li>無需拆門改窗，保留原始空間</li>
-                    <li>財位、文昌位、桃花位、煞氣點逐一標示</li>
-                    <li>床位、座位、門窗距離精準至公分</li>
-                    <li>後續問題一對一親自回覆</li>
-                </ul>
-                <div class="service-info">
-                    <p><span>適用對象</span>預售屋、新宅裝修前、中古屋調整、房屋重建規劃皆適用</p>
-                    <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
-                </div>
-                <p class="service-price">NT$ 7,500 <span>二樓起每層加 NT$ 3,500</span></p>
+        </article>
+        <div class="svc-groups">
+            <div class="svc-group fade-in">
+                <h3 class="svc-group-title">陽宅規劃</h3>
+                <details class="svc-row">
+                    <summary><span class="svc-row-name">遠距陽宅風水規劃設計｜住宅</span><span class="svc-row-price">NT$ 7,500</span><span class="svc-row-chev" aria-hidden="true"></span></summary>
+                    <div class="svc-row-body">
+                        <p class="svc-row-desc">不受地點限制，三元納氣多派融合分析，為你規劃全宅旺氣格局。</p>
+                        <ul class="svc-benefits">
+                            <li>多派融合：三元納氣、紫白飛星、乾坤國寶、東西四命</li>
+                            <li>無需拆門改窗，保留原始空間</li>
+                            <li>財位、文昌位、桃花位、煞氣點逐一標示</li>
+                            <li>床位、座位、門窗距離精準至公分</li>
+                            <li>後續問題一對一親自回覆</li>
+                        </ul>
+                        <div class="svc-info">
+                            <p><span>適用對象</span>預售屋、新宅裝修前、中古屋調整、房屋重建規劃皆適用</p>
+                            <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
+                        </div>
+                        <p class="svc-row-note">二樓起每層加 NT$ 3,500</p>
+                    </div>
+                </details>
+                <details class="svc-row">
+                    <summary><span class="svc-row-name">遠距陽宅風水規劃設計｜公司工廠</span><span class="svc-row-price">費用面議</span><span class="svc-row-chev" aria-hidden="true"></span></summary>
+                    <div class="svc-row-body">
+                        <p class="svc-row-desc">不受地點限制，針對辦公室、廠房進行三元納氣多派融合分析，量身規劃旺氣格局。</p>
+                        <ul class="svc-benefits">
+                            <li>多派融合：三元納氣、紫白飛星、乾坤國寶、東西四命</li>
+                            <li>無需拆門改窗，保留原始空間</li>
+                            <li>財位、文昌位、桃花位、煞氣點逐一標示</li>
+                            <li>座位、門窗、動線方位精準至公分</li>
+                            <li>後續問題一對一親自回覆</li>
+                        </ul>
+                        <div class="svc-info">
+                            <p><span>適用對象</span>辦公室、店面、工廠、倉庫等商業空間</p>
+                            <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
+                        </div>
+                        <p class="svc-row-note">視空間大小及複雜度</p>
+                    </div>
+                </details>
+                <details class="svc-row">
+                    <summary><span class="svc-row-name">實地陽宅風水規劃設計</span><span class="svc-row-price">費用面議</span><span class="svc-row-chev" aria-hidden="true"></span></summary>
+                    <div class="svc-row-body">
+                        <p class="svc-row-desc">親自實地勘察規劃，量身打造合宜風水環境布局。科學與傳統兼備，提供永久免費諮詢，成為你長期信賴的陽宅顧問。</p>
+                        <ul class="svc-benefits">
+                            <li>三元納氣多派融合：紫白飛星、乾坤國寶、東西四命</li>
+                            <li>外局規劃：門路、嶠星、水神真機等技法強化收氣引氣</li>
+                            <li>零正催照水法，強化財官雙運</li>
+                            <li>室內旺氣布局依家庭成員八字命格量身打造</li>
+                            <li>高精度智能電子羅盤，細分每度數，旺衰一目了然</li>
+                            <li>無需拆門改窗，永久免費諮詢服務</li>
+                        </ul>
+                        <div class="svc-info">
+                            <p><span>適用對象</span>一般住宅、店面、企業、公司工廠</p>
+                        </div>
+                        <p class="svc-row-note">視空間大小及複雜度</p>
+                    </div>
+                </details>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">☶</div>
-                <h3 class="service-name">遠距陽宅風水規劃設計｜公司工廠</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">不受地點限制，針對辦公室、廠房進行三元納氣多派融合分析，量身規劃旺氣格局。</p>
-                <ul class="service-benefits">
-                    <li>多派融合：三元納氣、紫白飛星、乾坤國寶、東西四命</li>
-                    <li>無需拆門改窗，保留原始空間</li>
-                    <li>財位、文昌位、桃花位、煞氣點逐一標示</li>
-                    <li>座位、門窗、動線方位精準至公分</li>
-                    <li>後續問題一對一親自回覆</li>
-                </ul>
-                <div class="service-info">
-                    <p><span>適用對象</span>辦公室、店面、工廠、倉庫等商業空間</p>
-                    <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
-                </div>
-                <p class="service-price">費用面議 <span>視空間大小及複雜度</span></p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">☵</div>
-                <h3 class="service-name">實地陽宅風水規劃設計</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">親自實地勘察規劃，量身打造合宜風水環境布局。科學與傳統兼備，提供永久免費諮詢，成為你長期信賴的陽宅顧問。</p>
-                <ul class="service-benefits">
-                    <li>三元納氣多派融合：紫白飛星、乾坤國寶、東西四命</li>
-                    <li>外局規劃：門路、嶠星、水神真機等技法強化收氣引氣</li>
-                    <li>零正催照水法，強化財官雙運</li>
-                    <li>室內旺氣布局依家庭成員八字命格量身打造</li>
-                    <li>高精度智能電子羅盤，細分每度數，旺衰一目了然</li>
-                    <li>無需拆門改窗，永久免費諮詢服務</li>
-                </ul>
-                <div class="service-info">
-                    <p><span>適用對象</span>一般住宅、店面、企業、公司工廠</p>
-                </div>
-                <p class="service-price">費用面議 <span>視空間大小及複雜度</span></p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">☰</div>
-                <h3 class="service-name">新生兒命名｜成人改名</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">名字是每天接觸的語言符號，合適的名字讓命格潛能更順利發揮。三才八格、生肖五行深度解析，搭配紫微命盤交叉確認。</p>
-                <ul class="service-benefits">
-                    <li>合適的名字與命格相符，五行平衡，形音義吉祥</li>
-                    <li>有助提升自信、形象、人際感受與心理能量</li>
-                    <li>不適名字可能在人際、事業、心理層面形成無形阻力</li>
-                </ul>
-                <div class="service-info">
-                    <p><span>新生兒命名</span>嬰兒姓名、性別、生辰、喜忌用字</p>
-                    <p><span>成人改名</span>本人姓名、性別、生辰</p>
-                </div>
-                <p class="service-price">NT$ 2,600 <span>每次</span></p>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">✦</div>
-                <h3 class="service-name">紫微斗數｜線上諮詢</h3>
-                <p class="service-hint"><span class="hint-arrow">▾</span>查看服務內容</p>
-                <p class="service-desc">透過紫微斗數解析個人命盤，系統化了解學業、事業、婚姻、財運走向。不只看命，更給你量身訂製的人生建議。</p>
-                <ul class="service-benefits">
-                    <li>精準時辰校正，排除登記誤差與太陽時差，找出真實命盤</li>
-                    <li>格局 + 單星整合分析，全面解讀命盤結構</li>
-                    <li>三個大限 + 三個流年吉凶推演，掌握人生黃金關鍵年</li>
-                    <li>根據命盤提供貼切人生建言，走出最適合自己的路徑</li>
-                </ul>
-                <div class="service-info">
-                    <p><span>準備資料</span>姓名、性別、婚姻狀況、出生時間（幾點幾分）、出生地、想詢問的問題</p>
-                </div>
-                <p class="service-price">NT$ 2,600 <span>每小時</span></p>
+            <div class="svc-group fade-in">
+                <h3 class="svc-group-title">命理</h3>
+                <details class="svc-row">
+                    <summary><span class="svc-row-name">新生兒命名｜成人改名</span><span class="svc-row-price">NT$ 2,600</span><span class="svc-row-chev" aria-hidden="true"></span></summary>
+                    <div class="svc-row-body">
+                        <p class="svc-row-desc">名字是每天接觸的語言符號，合適的名字讓命格潛能更順利發揮。三才八格、生肖五行深度解析，搭配紫微命盤交叉確認。</p>
+                        <ul class="svc-benefits">
+                            <li>合適的名字與命格相符，五行平衡，形音義吉祥</li>
+                            <li>有助提升自信、形象、人際感受與心理能量</li>
+                            <li>不適名字可能在人際、事業、心理層面形成無形阻力</li>
+                        </ul>
+                        <div class="svc-info">
+                            <p><span>新生兒命名</span>嬰兒姓名、性別、生辰、喜忌用字</p>
+                            <p><span>成人改名</span>本人姓名、性別、生辰</p>
+                        </div>
+                        <p class="svc-row-note">每次</p>
+                    </div>
+                </details>
+                <details class="svc-row">
+                    <summary><span class="svc-row-name">紫微斗數｜線上諮詢</span><span class="svc-row-price">NT$ 2,600</span><span class="svc-row-chev" aria-hidden="true"></span></summary>
+                    <div class="svc-row-body">
+                        <p class="svc-row-desc">透過紫微斗數解析個人命盤，系統化了解學業、事業、婚姻、財運走向。不只看命，更給你量身訂製的人生建議。</p>
+                        <ul class="svc-benefits">
+                            <li>精準時辰校正，排除登記誤差與太陽時差，找出真實命盤</li>
+                            <li>格局 + 單星整合分析，全面解讀命盤結構</li>
+                            <li>三個大限 + 三個流年吉凶推演，掌握人生黃金關鍵年</li>
+                            <li>根據命盤提供貼切人生建言，走出最適合自己的路徑</li>
+                        </ul>
+                        <div class="svc-info">
+                            <p><span>準備資料</span>姓名、性別、婚姻狀況、出生時間（幾點幾分）、出生地、想詢問的問題</p>
+                        </div>
+                        <p class="svc-row-note">每小時</p>
+                    </div>
+                </details>
             </div>
         </div>
     </div>
@@ -1224,33 +1384,34 @@
 <!-- Process -->
 <section id="process">
     <div class="container">
-        <div class="section-head-center">
-            <p class="section-label">諮詢流程</p>
+        <div class="split">
+        <div class="split-head">
             <h2 class="section-title">四個步驟，開始你的命理之旅</h2>
             <div class="divider"></div>
         </div>
-        <div class="process-steps">
-            <div class="process-step fade-in">
+        <ol class="process-steps">
+            <li class="process-step fade-in">
                 <div class="step-num">一</div>
                 <h4 class="step-title">加入 LINE 聯絡</h4>
                 <p class="step-desc">搜尋 LINE ID @023ekrej 加入好友，告知想預約的服務項目</p>
                 <a href="#contact" class="step-cta">點這邊前往預約 →</a>
-            </div>
-            <div class="process-step fade-in">
+            </li>
+            <li class="process-step fade-in">
                 <div class="step-num">二</div>
                 <h4 class="step-title">提供基本資料</h4>
                 <p class="step-desc">依服務類型提供出生年月日時、姓名，或建物地址與平面圖等必要資訊</p>
-            </div>
-            <div class="process-step fade-in">
+            </li>
+            <li class="process-step fade-in">
                 <div class="step-num">三</div>
                 <h4 class="step-title">深度分析規劃</h4>
                 <p class="step-desc">確認付款並資料齊全後，5–7 個工作天內完成分析，陽宅服務另附書面報告</p>
-            </div>
-            <div class="process-step fade-in">
+            </li>
+            <li class="process-step fade-in">
                 <div class="step-num">四</div>
                 <h4 class="step-title">報告與追蹤</h4>
                 <p class="step-desc">交付書面報告並安排線上說明，後續提供追蹤諮詢</p>
-            </div>
+            </li>
+        </ol>
         </div>
     </div>
 </section>
@@ -1259,8 +1420,8 @@
 <!-- FAQ -->
 <section id="faq">
     <div class="container">
-        <div class="faq-header">
-            <p class="section-label">常見問題</p>
+        <div class="split">
+        <div class="split-head">
             <h2 class="section-title">你可能想知道的事</h2>
             <div class="divider"></div>
         </div>
@@ -1320,6 +1481,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </section>
 
@@ -1327,7 +1489,6 @@
 <section id="contact">
     <div class="container">
         <div class="contact-box">
-            <p class="section-label">預約諮詢</p>
             <h2 class="section-title">準備好看見你的生命藍圖了嗎？</h2>
             <div class="divider"></div>
             <p class="contact-desc">透過 LINE 聯絡，告知想了解的服務項目，我會盡快回覆並安排後續流程。</p>
