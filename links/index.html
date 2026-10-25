@@ -67,6 +67,15 @@
     box-shadow: 0 6px 18px rgba(0,0,0,.25);
   }
   .cta small { display: block; font-size: 12px; letter-spacing: .02em; opacity: .8; font-weight: 400; }
+  .cta-2 {
+    display: block; text-align: center; text-decoration: none;
+    margin-top: 10px; padding: 11px 16px; border-radius: 999px;
+    border: 1px solid var(--card-line); background: var(--card);
+    color: var(--gold-soft); font-weight: 500; font-size: 15px; letter-spacing: .08em;
+    transition: background .2s;
+  }
+  .cta-2:hover { background: rgba(255,255,255,0.08); }
+  .cta-2 small { display: block; font-size: 12px; letter-spacing: .02em; color: var(--text-2); font-weight: 400; }
 
   section { margin-top: 34px; }
   h2 {
@@ -110,6 +119,7 @@
   .bio { animation-delay: .22s; }
   .socials { animation-delay: .32s; }
   .cta { animation-delay: .42s; }
+  .cta-2 { animation: rise .7s cubic-bezier(.2,.7,.3,1) .5s both; }
   footer { animation-delay: .6s; }
 
   @keyframes glow {
@@ -202,8 +212,12 @@
       </a>
     </nav>
     <a class="cta" href="https://lin.ee/PxBJdUN" target="_blank" rel="noopener">
-      加 LINE 預約諮詢
+      LINE 免費諮詢
       <small>留下想問的事情與方便的時間，我會回覆你</small>
+    </a>
+    <a class="cta-2" href="https://mysticfeather9.github.io/" target="_blank" rel="noopener">
+      官方網站
+      <small>服務流程、常見問題與完整說明</small>
     </a>
   </header>
 
@@ -253,6 +267,8 @@
         <ul>
           <li>新生兒命名：嬰兒姓名、性別、生辰、喜忌用字</li>
           <li>成人改名：本人姓名、性別、生辰</li>
+          <li>交付內容：PDF 書面報告，每個候選名附選字理由；線上說明一次，候選可來回討論調整</li>
+          <li>候選與時程：候選名數量依格局而定，約 5–7 個工作天交付</li>
         </ul>
       </div>
     </details>
@@ -276,26 +292,6 @@
       <div class="s-name">紫白飛星九宮流年建議</div>
       <div class="c-desc">每年小寒前約一個月，限時限額開放隨喜捐款換一份住家流年建議。追蹤 IG、臉書 或加 LINE，開放時就會看到消息。</div>
     </div>
-  </section>
-
-  <section>
-    <h2>更多內容</h2>
-    <a class="card" href="https://mysticfeather9.github.io/" target="_blank" rel="noopener">
-      <div class="c-title">官方網站</div>
-      <div class="c-desc">服務流程、常見問題與完整說明</div>
-    </a>
-    <a class="card" href="https://www.instagram.com/mysticfeather9" target="_blank" rel="noopener">
-      <div class="c-title">IG 風水命理筆記</div>
-      <div class="c-desc">形煞、紫微、遠距堪宅實錄</div>
-    </a>
-    <a class="card" href="https://www.threads.com/@mysticfeather9" target="_blank" rel="noopener">
-      <div class="c-title">Threads</div>
-      <div class="c-desc">比較短的風水命理隨筆</div>
-    </a>
-    <a class="card" href="https://www.facebook.com/profile.php?id=61574833595617" target="_blank" rel="noopener">
-      <div class="c-title">Facebook 粉絲專頁</div>
-      <div class="c-desc">服務介紹與最新消息</div>
-    </a>
   </section>
 
   <footer>© 2026 玄境拾光 Mystic Feather</footer>
