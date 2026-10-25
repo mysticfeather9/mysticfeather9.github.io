@@ -1157,6 +1157,60 @@
 
             footer { flex-direction: column; text-align: center; padding: 24px 20px; }
         }
+
+        /* ── 中軸對稱版（2026-10-25）：全頁一條中軸；要還原就刪掉本段，並把 HTML 的 axis／section-head-center 改回 split／split-head ── */
+        #hero { flex-direction: column; gap: 0; }
+        #hero .hero-luopan {
+            position: absolute;
+            left: 50%; top: 50%;
+            width: min(640px, 88vw); height: auto; aspect-ratio: 1;
+            transform: translate(-50%, -50%);
+            opacity: 0.26;
+            z-index: 1;
+        }
+        .hero-content { text-align: center; max-width: 640px; }
+        .hero-quote { border-left: 0; padding-left: 0; }
+        .hero-btns { justify-content: center; }
+
+        #about { background: var(--cream); }
+        #about::before { display: none; }
+        #about .section-title { color: var(--navy); }
+        .about-text { max-width: 760px; margin: 0 auto; text-align: center; }
+        .about-text .divider { margin-left: auto; margin-right: auto; }
+        .about-text p { color: var(--text-light); }
+        .credentials { justify-content: center; }
+        .expertise-tags { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 24px; text-align: center; }
+        .expertise-label { grid-column: 1 / -1; color: var(--text-light); }
+        .expertise-cat-label { font-size: 12px; color: #8C6A3A; opacity: 1; }
+        .expertise-list { justify-content: center; }
+        .expertise-tag { background: var(--white); border-color: var(--border); color: var(--navy); }
+        .about-stats { grid-template-columns: repeat(3, 1fr); border-top-color: var(--border); }
+        .stat-num { color: #A47A42; }
+        .stat-label { color: var(--text-light); }
+
+        .axis .section-head-center .divider { margin-bottom: 48px; }
+        .axis .section-title, .about-text .section-title { text-wrap: balance; word-break: keep-all; }
+        #process .process-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        #process .process-steps::before {
+            top: 27px; bottom: auto; left: 12.5%; right: 12.5%;
+            width: auto; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196,151,90,0.6), rgba(196,151,90,0.6), transparent);
+        }
+        #process .process-step { display: block; text-align: center; padding: 0 16px; }
+        #process .step-num { margin: 0 auto 20px; }
+        #process .step-desc { max-width: none; }
+        #faq .faq-list { max-width: 760px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            #hero { padding: 120px 20px 72px; }
+            #hero .hero-luopan { width: 92vw; opacity: 0.2; }
+            .expertise-tags { grid-template-columns: 1fr; gap: 16px; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            #process .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+            #process .process-steps::before { display: none; }
+            #process .process-step { padding: 0 8px; }
+            #process .step-num { width: 48px; height: 48px; font-size: 16px; }
+        }
     </style>
 </head>
 <body>
@@ -1194,7 +1248,7 @@
         <p class="hero-quote">「透過古老智慧，看見你的人生藍圖」</p>
         <div class="hero-btns">
             <a href="#services" class="btn-primary">了解服務</a>
-            <a href="#contact" class="btn-outline">立即預約</a>
+            <a href="#contact" class="btn-outline">LINE 免費諮詢</a>
         </div>
     </div>
 </section>
@@ -1206,12 +1260,9 @@
             <div class="about-text fade-in">
                 <h2 class="section-title">陽宅風水 × 命理，看見你的生命格局</h2>
                 <div class="divider"></div>
-                <p>投入風水命理研究超過十年，深入鑽研陽宅風水、紫微斗數、奇門遁甲與姓名學。</p>
-                <p>師承巃羽堂陳巃羽老師，專研三元納氣流派、形家派等陽宅派別。</p>
-                <p>將多門學問融會貫通，幫助每位個案找到真正適合自己的方向。</p>
-                <p>命盤帶你看見天賦潛能、財運走向與人生課題；陽宅鑑定帶你看見住家氣場如何影響你的運勢格局。</p>
-                <p>不是預測未來，而是幫你讀懂已經存在的藍圖，讓每一個選擇更有依據。</p>
-                <p>每一次諮詢，都是讓改變真正發生的起點。</p>
+                <p>投入風水命理研究超過十年，深入鑽研陽宅風水、紫微斗數、奇門遁甲與姓名學。師承巃羽堂陳巃羽老師，專研三元納氣流派、形家派等陽宅派別。</p>
+                <p>將多門學問融會貫通，幫助每位個案找到真正適合自己的方向。命盤帶你看見天賦潛能、財運走向與人生課題；陽宅鑑定帶你看見住家氣場如何影響你的運勢格局。</p>
+                <p>不是預測未來，而是幫你讀懂已經存在的藍圖，讓每一個選擇更有依據。每一次諮詢，都是讓改變真正發生的起點。</p>
                 <div class="credentials">
                     <span class="credential-tag">
                         <span class="cred-icon">◎</span>
@@ -1258,6 +1309,10 @@
                         <span class="stat-num">13</span>
                         <p class="stat-label">風水命理系統</p>
                     </div>
+                    <div class="stat-item">
+                        <span class="stat-num">10+</span>
+                        <p class="stat-label">年研究經驗</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1290,7 +1345,7 @@
                     <p><span>適用區域</span>台灣、大陸、香港、新加坡、馬來西亞、美國、加拿大、澳洲等全球地區</p>
                     <p><span>優惠</span>鑑定後委託規劃設計，可享鑑定費 50% 折抵</p>
                 </div>
-                <a href="#contact" class="btn-primary svc-feature-cta">立即預約</a>
+                <a href="#contact" class="btn-primary svc-feature-cta">LINE 免費諮詢</a>
             </div>
         </article>
         <div class="svc-groups">
@@ -1365,6 +1420,8 @@
                         <div class="svc-info">
                             <p><span>新生兒命名</span>嬰兒姓名、性別、生辰、喜忌用字</p>
                             <p><span>成人改名</span>本人姓名、性別、生辰</p>
+                            <p><span>交付內容</span>PDF 書面報告，每個候選名附選字理由；線上說明一次，候選可來回討論調整</p>
+                            <p><span>候選與時程</span>候選名數量依格局而定，約 5–7 個工作天交付</p>
                         </div>
                         <p class="svc-row-note">每次</p>
                     </div>
@@ -1393,8 +1450,8 @@
 <!-- Process -->
 <section id="process">
     <div class="container">
-        <div class="split">
-        <div class="split-head">
+        <div class="axis">
+        <div class="section-head-center">
             <h2 class="section-title">四個步驟，開始你的命理之旅</h2>
             <div class="divider"></div>
         </div>
@@ -1413,7 +1470,7 @@
             <li class="process-step fade-in">
                 <div class="step-num">三</div>
                 <h4 class="step-title">深度分析規劃</h4>
-                <p class="step-desc">確認付款並資料齊全後，5–7 個工作天內完成分析，陽宅服務另附書面報告</p>
+                <p class="step-desc">確認付款並資料齊全後，5–7 個工作天內完成分析，陽宅與改名服務另附書面報告</p>
             </li>
             <li class="process-step fade-in">
                 <div class="step-num">四</div>
@@ -1429,8 +1486,8 @@
 <!-- FAQ -->
 <section id="faq">
     <div class="container">
-        <div class="split">
-        <div class="split-head">
+        <div class="axis">
+        <div class="section-head-center">
             <h2 class="section-title">你可能想知道的事</h2>
             <div class="divider"></div>
         </div>
