@@ -1,6 +1,8 @@
+@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-serif-tc-400.woff2) format('woff2')}
+@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-serif-tc-700.woff2) format('woff2')}
 :root{--navy:#1A2D20;--navy-light:#243D2C;--gold:#C4975A;--gold-light:#E8D5B0;--cream:#F8FAF8;--bg-alt:#EDF2ED;--text:#1C1C1C;--text-light:#5A6A5A;--white:#fff;--border:#D6E0D6}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans TC',sans-serif;color:var(--text);background:var(--cream);line-height:1.85;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--text);background:var(--cream);line-height:1.85;-webkit-text-size-adjust:100%}
 a{color:inherit}
 header.top{background:var(--navy);position:sticky;top:0;z-index:5}
 .top-in{max-width:1080px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -13,14 +15,14 @@ main{max-width:760px;margin:0 auto;padding:40px 24px 64px}
 main.wide{max-width:1080px}
 .crumb{font-size:13px;color:var(--text-light);margin-bottom:16px}
 .crumb a{text-decoration:none}
-h1{font-family:'Noto Serif TC',serif;font-size:32px;line-height:1.4;color:var(--navy);font-weight:600}
+h1{font-family:'Noto Serif TC Sub','Songti TC','Noto Serif CJK TC','PMingLiU',serif;font-size:32px;line-height:1.4;color:var(--navy);font-weight:700}
 .sub{font-size:17px;color:var(--text-light);margin-top:10px}
 .meta{font-size:13px;color:var(--text-light);margin:12px 0 24px}
 .cover{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block;margin-bottom:32px;background:var(--bg-alt)}
 .body p,.body ul,.body ol,.body blockquote{margin-bottom:18px}
 .body ul,.body ol{padding-left:1.5em}
 .body li{margin-bottom:8px}
-.body h2{font-family:'Noto Serif TC',serif;font-size:23px;line-height:1.5;color:var(--navy);margin:36px 0 14px;font-weight:600}
+.body h2{font-family:'Noto Serif TC Sub','Songti TC','Noto Serif CJK TC','PMingLiU',serif;font-size:23px;line-height:1.5;color:var(--navy);margin:36px 0 14px;font-weight:700}
 .body h3{font-size:18px;line-height:1.6;color:var(--navy-light);margin:28px 0 10px;font-weight:500}
 .body img{max-width:100%;height:auto;border-radius:6px;display:block;margin:20px auto}
 .body hr{border:0;border-top:1px solid var(--border);margin:32px auto;width:40%}
@@ -29,10 +31,10 @@ h1{font-family:'Noto Serif TC',serif;font-size:32px;line-height:1.4;color:var(--
 .btn,.body a.btn{display:inline-block;background:var(--navy);color:var(--white);text-decoration:none;padding:12px 28px;border-radius:4px;font-size:15px}
 .line-cta{text-align:center;margin-top:28px}
 .svc{margin-top:40px;background:var(--bg-alt);border-left:3px solid var(--gold);border-radius:6px;padding:22px 24px}
-.svc h2{font-family:'Noto Serif TC',serif;font-size:19px;color:var(--navy);margin-bottom:10px;font-weight:600}
+.svc h2{font-family:'Noto Serif TC Sub','Songti TC','Noto Serif CJK TC','PMingLiU',serif;font-size:19px;color:var(--navy);margin-bottom:10px;font-weight:700}
 .svc a{display:block;color:var(--navy);padding:4px 0}
 .rel{margin-top:40px}
-.rel h2{font-family:'Noto Serif TC',serif;font-size:19px;color:var(--navy);margin-bottom:10px;font-weight:600}
+.rel h2{font-family:'Noto Serif TC Sub','Songti TC','Noto Serif CJK TC','PMingLiU',serif;font-size:19px;color:var(--navy);margin-bottom:10px;font-weight:700}
 .rel a{display:block;padding:5px 0;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);font-size:15px}
 .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 28px}
 .tabs a{padding:6px 16px;border:1px solid var(--border);border-radius:999px;text-decoration:none;font-size:14px;background:var(--white)}
